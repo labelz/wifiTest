@@ -7,5 +7,27 @@
 </ion-header>
 
 <ion-content padding>
+  <!-- <ion-card>
+    <ion-card-header>
+      Line Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card> -->
+  <ion-list>
+    <ng-container *ngFor="let row of wifiList">
+      <ion-item [ngStyle]="row.style">
+        <h2>{{row.ssid}}({{row.bssid}}){{row.current}}</h2>
+        <p>{{row.signal}}dBm CH {{row.channel}} {{row.frequency}}MHz</p>
+      </ion-item>
+    </ng-container>
+  </ion-list>
 
+
+  <!-- {{output}} -->
+  <!-- <button (click)="getCurrentSSID()" ion-button full>Get Current SSID</button> 
+  <button (click)="getWifiList()" ion-button full>Get configured SSID list</button> 
+  <button (click)="getScanResult()" ion-button full>Get Scan result</button> -->
+  <!-- <button (click)="startScan()" ion-button full>Get startScan</button> -->
 </ion-content>
